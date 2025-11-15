@@ -3,337 +3,387 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PM SHRI COMPOSITE (1-8) UPS ELAMPUR</title>
+  <title>PM SHRI UPPER PRIMARY SCHOOL CHIRAWAK</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Playfair+Display:wght@700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Swiper.js for Hero Slider -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
 
   <style>
-    /* ---------- Brand colors and basics ---------- */
-    :root{
-      --ad-dark:#15123a;         /* deep navy hero/footer */
-      --ad-mid:#1f2250;         /* mid navy */
-      --primary:#1148ff;        /* bright blue CTA (Adelaide-like) */
-      --accent-orange:#F7931E;  /* your existing orange for small accents */
-      --muted:#6b6b6b;
-      --white:#ffffff;
-      --max-width:1200px;
-    }
-    *{box-sizing:border-box}
-    body{font-family:"Open Sans",system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;margin:0;color:#222;background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
-
-    /* ---------- Top mini header ---------- */
-    .top-mini{background:#fff;border-bottom:4px solid var(--accent-orange);position:sticky;top:0;z-index:120}
-    .top-mini .inner{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
-    .brand-title{font-family:"Merriweather",serif;font-weight:900;color:var(--ad-dark);font-size:20px}
-    .top-links{display:flex;gap:12px;align-items:center;font-size:13px;color:var(--muted)}
-
-    /* ---------- Main nav (white bar) ---------- */
-    .white-nav{background:#fff;box-shadow:0 1px 0 rgba(0,0,0,0.06)}
-    .white-nav .inner{max-width:var(--max-width);margin:0 auto;padding:10px 16px;display:flex;align-items:center;justify-content:space-between}
-    .white-nav .right a{margin-left:12px;color:var(--muted);font-weight:600}
-
-    /* ---------- Hero (split) ---------- */
-    .hero{display:flex;background:var(--ad-dark);color:var(--white);align-items:stretch}
-    .hero .inner{max-width:var(--max-width);margin:0 auto;display:flex;width:100%;align-items:stretch;padding:28px 16px;gap:32px}
-    .hero-left{flex:1;padding:12px 6px;display:flex;flex-direction:column;justify-content:center}
-    .hero-left h1{font-family:"Playfair Display",serif;font-size:54px;margin:0 0 12px;line-height:1;color:#fff}
-    .hero-left p{color:rgba(255,255,255,.9);max-width:680px;margin:0 0 18px;font-size:18px}
-    .hero-left .cta{display:flex;gap:12px}
-    .btn-blue{background:var(--primary);color:#fff;padding:12px 20px;border-radius:6px;font-weight:700;display:inline-block;box-shadow:0 6px 18px rgba(17,72,255,0.12)}
-    .btn-outline{border:2px solid rgba(255,255,255,.18);color:#fff;padding:10px 18px;border-radius:6px;font-weight:700}
-
-    .hero-right{width:46%;min-width:320px;display:flex;align-items:center;justify-content:center}
-    .hero-right img{width:100%;height:320px;object-fit:cover;border-radius:6px;box-shadow:0 12px 36px rgba(0,0,0,0.4)}
-
-    /* ---------- main body layout ---------- */
-    .container{max-width:var(--max-width);margin:26px auto;padding:0 16px;display:grid;grid-template-columns:300px 1fr;gap:32px;align-items:start}
-    /* left sidebar */
-    .sidebar{background:var(--ad-mid);padding:20px;border-radius:4px;color:var(--white);position:sticky;top:160px}
-    .sidebar h3{font-family:"Merriweather",serif;margin:0 0 12px;font-size:18px}
-    .sidebar ul{list-style:none;padding:0;margin:0}
-    .sidebar li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
-    .sidebar a{color:var(--accent-orange);font-weight:700}
-
-    /* content */
-    .main{background:var(--white);padding:8px 0}
-    .page-title{font-family:"Merriweather",serif;font-size:34px;color:var(--ad-dark);margin:6px 0 18px}
-    .lead{color:var(--muted);max-width:780px;font-size:16px}
-
-    /* ---------- Feature cards row (3 columns) ---------- */
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:22px 0}
-    .card{background:var(--ad-mid);color:#fff;border-radius:6px;overflow:hidden;display:flex;flex-direction:column;min-height:320px}
-    .card img{width:100%;height:180px;object-fit:cover}
-    .card-body{padding:18px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
-    .card h4{margin:0 0 8px;font-family:"Merriweather";font-size:20px}
-    .card p{color:rgba(255,255,255,0.9);margin:0 0 12px}
-    .card .card-cta{display:inline-block;background:#1f6bff;padding:10px 14px;border-radius:6px;color:#fff;font-weight:700}
-
-    /* ---------- Gallery (grid) ---------- */
-    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
-    .gallery-grid img{width:100%;height:160px;object-fit:cover;border-radius:6px;cursor:pointer;box-shadow:0 8px 18px rgba(0,0,0,0.12);transition:transform .18s}
-    .gallery-grid img:hover{transform:scale(1.02)}
-
-    /* ---------- Footer multi-column ---------- */
-    footer.site-footer{background:var(--ad-mid);color:#fff;padding:36px 16px;margin-top:30px}
-    .footer-inner{max-width:var(--max-width);margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:22px;align-items:start}
-    .footer-logo{font-family:"Merriweather";font-weight:900;color:#fff;font-size:18px;margin-bottom:10px}
-    .footer-col h5{color:#fff;margin:0 0 12px;font-family:"Merriweather";font-size:16px}
-    .footer-col a{display:block;color:#e6e6ff;margin-bottom:8px;text-decoration:none}
-    .footer-bottom{background:var(--ad-dark);color:#fff;padding:20px;text-align:center;font-size:14px;margin-top:12px}
-
-    /* social icon row */
-    .socials{display:flex;gap:12px;margin-top:8px}
-    .socials a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:6px;background:rgba(255,255,255,0.06);color:#fff}
-
-    /* small devices */
-    @media (max-width:1000px){
-      .hero-right{display:none}
-      .container{grid-template-columns:1fr; padding:0 12px}
-      .sidebar{position:static;top:auto}
-      .cards{grid-template-columns:repeat(2,1fr)}
-      .gallery-grid{grid-template-columns:repeat(2,1fr)}
-      .footer-inner{grid-template-columns:repeat(2,1fr)}
-    }
-    @media (max-width:640px){
-      .hero-left h1{font-size:34px}
-      .cards{grid-template-columns:1fr}
-      .gallery-grid{grid-template-columns:1fr}
-      .footer-inner{grid-template-columns:1fr}
+    /* Custom styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* small util */
-    .muted{color:var(--muted)}
-    .hr{height:1px;background:rgba(0,0,0,0.06);margin:18px 0}
-    .backtop{position:fixed;right:18px;bottom:18px;background:#fff;border-radius:6px;padding:8px 12px;border:1px solid rgba(0,0,0,0.06);box-shadow:0 8px 20px rgba(0,0,0,0.08);font-weight:700}
+    .font-heading {
+      font-family: 'Roboto Slab', serif;
+    }
+
+    /* Swiper slider styles */
+    .hero-swiper {
+      height: 60vh;
+      max-height: 500px;
+    }
+    
+    .hero-swiper .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-swiper .slide-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+    
+    .swiper-button-next, .swiper-button-prev {
+      color: white !important;
+    }
+
+    /* Lightbox modal */
+    .lightbox {
+      position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;z-index:9999;
+    }
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:95%;max-height:90%;border-radius:6px;box-shadow:0 12px 40px rgba(0,0,0,0.6)}
+    .lightbox .close{position:absolute;top:18px;right:20px;color:#fff;font-size:28px;background:transparent;border:none;cursor:pointer}
   </style>
+
 </head>
-<body>
+<body class="bg-gray-50">
 
-  <!-- top mini header -->
-  <div class="top-mini" role="banner">
-    <div class="inner">
-      <div class="brand-title">PM SHRI COMPOSITE (1–8) UPS ELAMPUR, ALIGARH(UP)</div>
-      <div class="top-links">
-        ENGLISH MEDIUM GOVERNMENT SCHOOL&nbsp;|&nbsp;
-        <span class="muted">🇬🇧 English</span>&nbsp;|&nbsp;<span class="muted">🇮🇳 Hindi</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- thin white nav -->
-  <div class="white-nav" aria-label="top nav">
-    <div class="inner">
-      <div style="display:flex;align-items:center;gap:18px">
-        <!-- MODIFIED: Image path updated -->
-        <img src="IMG-20251109-WA0010.jpg" alt="logo" style="height:42px;object-fit:contain;border-radius:6px" onerror="this.onerror=null;this.src='https://placehold.co/100x42/15123a/FFFFFF?text=Logo'">
-        <nav aria-label="Main menu" style="display:flex;gap:12px;align-items:center">
-          <a href="#" style="font-weight:700;color:var(--ad-dark)">HOME</a>
-          <a href="#" class="muted">ABOUT</a>
-          <a href="#" class="muted">STAFF</a>
-          <a href="#" class="muted">ACTIVITIES</a>
-        </nav>
-      </div>
-
-      <div class="right" style="display:flex;align-items:center;gap:14px">
-        <a href="#" class="muted">Contact</a>
-        <a href="#" class="muted">Login</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- hero -->
-  <section class="hero" aria-labelledby="hero-heading">
-    <div class="inner">
-      <div class="hero-left">
-        <h1 id="hero-heading">Empowering young learners,<br>building brighter futures</h1>
-        <p>PM Shri Composite (1–8) UPS Elampur is a government primary school under the PM SHRI initiative. We deliver caring, value-based education and modern digital learning facilities to prepare students for the 21st century.</p>
-        <div class="cta">
-          <a class="btn-blue" href="#">How to Apply</a>
-          <a class="btn-outline" href="#">Visit &amp; Contact</a>
-        </div>
-      </div>
-
-      <div class="hero-right" aria-hidden="true">
-        <!-- MODIFIED: Image path updated -->
-        <img src="IMG-20251109-WA0015.jpg" alt="School mural / campus" onerror="this.onerror=null;this.src='https://placehold.co/600x360/14294A/FFFFFF?text=Hero+Image'">
-      </div>
-    </div>
-  </section>
-
-  <!-- main content area (sidebar + content) -->
-  <div class="container" role="main">
-
-    <!-- sidebar navigation -->
-    <aside class="sidebar" aria-label="Sidebar">
-      <h3>WELCOME</h3>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About School</a></li>
-        <li><a href="#">Staff</a></li>
-        <li><a href="#">Strength</a></li>
-        <li><a href="#">Science Lab</a></li>
-        <li><a href="#">School Activities</a></li>
-        <li><a href="#">Media Highlights</a></li>
-        <li><a href="#">Meena Manch Activities</a></li>
-        <li><a href="#">E-Publication</a></li>
-        <li><a href="#">Video</a></li>
-        <li><a href="#">Admission Form</a></li>
-        <li><a href="#">E-Learning</a></li>
-        <li><a href="#">Visits</a></li>
-        <li><a href="#">MDM</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
-    </aside>
-
-    <!-- main -->
-    <section class="main" aria-label="Main content">
-
-      <h2 class="page-title">HOME</h2>
-
-      <p class="lead">Welcome to <strong>PM Shri Composite (1–8) UPS Elampur</strong>. We combine traditional values with modern teaching, well-equipped science & ICT labs, extracurricular programs and Meena Manch activities to nurture confident, capable students.</p>
-
-      <div class="hr"></div>
-
-      <!-- three feature cards -->
-      <div class="cards" aria-label="Highlights">
-        <div class="card">
-          <!-- MODIFIED: Image path updated -->
-          <img src="IMG-20251109-WA0008.jpg" alt="card image 1" onerror="this.onerror=null;this.src='https://placehold.co/800x480/1f2250/ffffff?text=Image'">
-          <div class="card-body">
-            <div>
-              <h4>Find an Education Agent</h4>
-              <p>Get in touch with local education partners and learn about admissions and programs.</p>
-            </div>
-            <div><a class="card-cta" href="#">View Agents</a></div>
-          </div>
-        </div>
-
-        <div class="card">
-          <!-- MODIFIED: Image path updated -->
-          <img src="IMG-20251109-WA0012.jpg" alt="card image 2" onerror="this.onerror=null;this.src='https://placehold.co/800x480/1f2250/ffffff?text=Image'">
-          <div class="card-body">
-            <div>
-              <h4>Discover Our Campus</h4>
-              <p>Explore our campus spaces, facilities and learning environments through images and videos.</p>
-            </div>
-            <div><a class="card-cta" href="#">Discover</a></div>
-          </div>
-        </div>
-
-        <div class="card">
-          <!-- MODIFIED: Image path updated -->
-          <img src="IMG-20251109-WA0013.jpg" alt="card image 3" onerror="this.onerror=null;this.src='https.placehold.co/800x480/1f2250/ffffff?text=Image'">
-          <div class="card-body">
-            <div>
-              <h4>Scholarships & Support</h4>
-              <p>Information on awards and support for students. Learn about eligibility and applications.</p>
-            </div>
-            <div><a class="card-cta" href="#">View Scholarships</a></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hr"></div>
-
-      <!-- embedded video (center) -->
-      <div style="margin:18px 0">
-        <div style="max-width:900px;margin:0 auto;background:#000;border-radius:6px;overflow:hidden">
-          <!-- MODIFIED: Video ID updated -->
-          <iframe width="100%" height="450" src="https://www.youtube.com/embed/M7lc1qf-aN0" title="School video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-
-      <div class="hr"></div>
-
-      <!-- gallery -->
-      <h3 style="font-family:'Merriweather',serif;color:var(--ad-dark)">OUR SCHOOL IN PICTURES</h3>
-      <div class="gallery-grid" id="galleryGrid" aria-label="Photo gallery">
-        <!-- MODIFIED: Image paths updated -->
-        <img src="IMG-20251109-WA0024.jpg" alt="gallery 1" data-full="IMG-20251109-WA0024.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x360/14294A/FFFFFF?text=Gallery+1'">
-        <img src="IMG-20251109-WA0023.jpg" alt="gallery 2" data-full="IMG-20251109-WA0023.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x360/14294A/FFFFFF?text=Gallery+2'">
-        <img src="IMG-20251109-WA0018.jpg" alt="gallery 3" data-full="IMG-20251109-WA0018.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x360/14294A/FFFFFF?text=Gallery+3'">
-        <img src="IMG-20251109-WA0022.jpg" alt="gallery 4" data-full="IMG-20251109-WA0022.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x360/14294A/FFFFFF?text=Gallery+4'">
-        <img src="IMG-20251109-WA0019.jpg" alt="gallery 5" data-full="IMG-20251109-WA0019.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x360/14294A/FFFFFF?text=Gallery+5'">
-        <img src="IMG-20251109-WA0008.jpg" alt="gallery 6" data-full="IMG-20251109-WA0008.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x360/14294A/FFFFFF?text=Gallery+6'">
-      </div>
-
-      <div class="hr"></div>
-
-      <p class="muted">Visit our pages for <strong>Admission</strong>, <strong>Science Lab</strong>, <strong>Computer Labs</strong>, <strong>Meena Manch</strong> activities and more.</p>
-
-    </section>
-  </div>
-
-  <!-- FOOTER -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer-inner">
+  <!-- Top Bar -->
+  <div class="bg-blue-800 text-white text-xs p-2">
+    <div class="container mx-auto max-w-6xl flex justify-between items-center">
       <div>
-        <div class="footer-logo">PM SHRI COMPOSITE (1–8) UPS ELAMPUR</div>
-        <p class="muted">Creating holistic and well-rounded individuals equipped with key 21st Century skills.</p>
-        <div class="socials" aria-label="social links">
-          <a href="#" title="facebook">f</a>
-          <a href="#" title="instagram">ig</a>
-          <a href="#" title="youtube">yt</a>
-          <a href="#" title="x">x</a>
+        <span>📞 +91-XXXXXXXXXX</span>
+        <span class="ml-4">📧 info@pmshrichirawak.edu.in</span>
+      </div>
+      <div class="flex gap-3">
+        <a href="#" class="hover:text-yellow-300">Parent Portal</a>
+        <a href="#" class="hover:text-yellow-300">Staff Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto max-w-6xl flex justify-between items-center p-4">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <img src="IMG-20251109-WA0010.jpg" alt="PM Shri Logo" class="h-14 w-14 object-cover rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/56x56/0284C7/FFFFFF?text=Logo'">
+        <div class="flex flex-col">
+          <span class="font-heading text-xl font-bold text-blue-900">PM SHRI CHIRAWAK</span>
+          <span class="text-xs text-gray-500">UPPER PRIMARY SCHOOL</span>
         </div>
       </div>
 
-      <div class="footer-col">
-        <h5>Study & Admission</h5>
-        <a href="#">How to apply</a>
-        <a href="#">Admission form</a>
-        <a href="#">E-Learning</a>
-      </div>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex gap-4 items-center">
+        <a href="index.html" class="text-blue-700 font-semibold hover:text-red-500">HOME</a>
+        <a href="about.html" class="text-gray-600 font-semibold hover:text-red-500">ABOUT</a>
+        <a href="admission.html" class="text-gray-600 font-semibold hover:text-red-500">ADMISSIONS</a>
+        <a href="activities.html" class="text-gray-600 font-semibold hover:text-red-500">ACTIVITIES</a>
+        <a href="gallery.html" class="text-gray-600 font-semibold hover:text-red-500">GALLERY</a>
+        <a href="contact.html" class="text-gray-600 font-semibold hover:text-red-500">CONTACT</a>
+        <a href="s1.html" class="bg-red-500 text-white px-3 py-2 rounded-md font-bold text-sm hover:bg-red-600">Elampur Site</a>
+      </nav>
 
-      <div class="footer-col">
-        <h5>Campus & Support</h5>
-        <a href="#">Science Lab</a>
-        <a href="#">Computer Labs</a>
-        <a href="#">Meena Manch</a>
-      </div>
-
-      <div class="footer-col">
-        <h5>Contact</h5>
-        <a href="#">Address: Elampur, Aligarh, UP</a>
-        <a href="tel:+911234567890">Phone: +91-1234567890</a>
-        <a href="mailto:info@pmshrielampur.edu.in">info@pmshrielampur.edu.in</a>
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-blue-900 text-2xl">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <div style="max-width:var(--max-width);margin:0 auto">
-        <div style="max-width:1000px;margin:0 auto;color:#fff;">
-          © 2025 PM SHRI COMPOSITE (1–8) UPS ELAMPUR. All rights reserved. &nbsp; | &nbsp; Developed by Shashi Teotia, Asst. Teacher
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+      <a href="index.html" class="block p-3 text-blue-700 font-semibold border-b">HOME</a>
+      <a href="about.html" class="block p-3 text-gray-600 font-semibold border-b hover:bg-gray-50">ABOUT</a>
+      <a href="admission.html" class="block p-3 text-gray-600 font-semibold border-b hover:bg-gray-50">ADMISSIONS</a>
+      <a href="activities.html" class="block p-3 text-gray-600 font-semibold border-b hover:bg-gray-50">ACTIVITIES</a>
+      <a href="gallery.html" class="block p-3 text-gray-600 font-semibold border-b hover:bg-gray-50">GALLERY</a>
+      <a href="contact.html" class="block p-3 text-gray-600 font-semibold border-b hover:bg-gray-50">CONTACT</a>
+      <a href="s1.html" class="block p-3 m-2 bg-red-500 text-white text-center rounded-md font-bold text-sm">Elampur Site</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Slider -->
+    <div class="swiper-container hero-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image: url('IMG-20251109-WA0015.jpg');">
+          <div class="slide-overlay">
+            <h1 class="font-heading text-4xl md:text-6xl font-bold animate-fade-in-down">Welcome to PM SHRI</h1>
+            <p class="text-lg md:text-xl mt-4 max-w-md">Empowering young learners for a brighter future.</p>
+            <a href="admission.html" class="mt-6 bg-red-500 text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-red-600">Admissions Open</a>
+          </div>
+        </div>
+        <div class="swiper-slide" style="background-image: url('IMG-20251109-WA0022.jpg');">
+          <div class="slide-overlay">
+            <h1 class="font-heading text-4xl md:text-6xl font-bold">Excellence in Education</h1>
+            <p class="text-lg md:text-xl mt-4 max-w-md">Committed to high-quality primary education.</p>
+            <a href="about.html" class="mt-6 bg-yellow-500 text-blue-900 px-6 py-3 rounded-full font-bold text-sm hover:bg-yellow-400">Learn More</a>
+          </div>
+        </div>
+        <div class="swiper-slide" style="background-image: url('IMG-20251109-WA0019.jpg');">
+          <div class="slide-overlay">
+            <h1 class="font-heading text-4xl md:text-6xl font-bold">Vibrant School Life</h1>
+            <p class="text-lg md:text-xl mt-4 max-w-md">Explore our activities, labs, and programs.</p>
+            <a href="activities.html" class="mt-6 bg-red-500 text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-red-600">See Activities</a>
+          </div>
         </div>
       </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Navigation -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- Core Values Section -->
+    <section class="bg-white">
+      <div class="container mx-auto max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-center">
+        <div class="p-8 bg-blue-600 text-white hover:bg-blue-700 transition-all">
+          <h3 class="font-heading text-2xl font-bold">Curriculum</h3>
+          <p class="text-sm mt-2">Modern, activity-based learning.</p>
+        </div>
+        <div class="p-8 bg-red-500 text-white hover:bg-red-600 transition-all">
+          <h3 class="font-heading text-2xl font-bold">Smart Labs</h3>
+          <p class="text-sm mt-2">Equipped Science & Computer labs.</p>
+        </div>
+        <div class="p-8 bg-yellow-500 text-blue-900 hover:bg-yellow-600 transition-all">
+          <h3 class="font-heading text-2xl font-bold">Meena Manch</h3>
+          <p class="text-sm mt-2">Empowering student activities.</p>
+        </div>
+        <div class="p-8 bg-green-600 text-white hover:bg-green-700 transition-all">
+          <h3 class="font-heading text-2xl font-bold">Our Presence</h3>
+          <p class="text-sm mt-2">Aligarh (UP)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="container mx-auto max-w-6xl p-6 md:p-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="font-heading text-4xl font-bold text-blue-900">Welcome to PM Shri Composite (1–8) UPS Elampur</h2>
+          <p class="text-gray-600 mt-6 leading-relaxed">
+            Situated in <strong>Aligarh (UP)</strong>, our school is the epitome of educational excellence in Uttar Pradesh. We are dedicated to providing high-quality primary education under the PM SHRI initiative.
+          </p>
+          <p class="text-gray-600 mt-4 leading-relaxed">
+            We are proud of our science and computer labs, vibrant school activities, and the Meena Manch program that empowers students. Our committed staff ensures a safe, inclusive, and stimulating learning environment.
+          </p>
+          <a href="about.html" class="mt-6 inline-block bg-blue-700 text-white px-6 py-3 rounded-md font-bold text-sm hover:bg-blue-800">Learn More About Us</a>
+        </div>
+        <!-- Video Embed -->
+        <div>
+          <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-xl">
+            <iframe src="https://www.youtube.com/embed/M7lc1qf-aN0" title="PM Shri Composite - Intro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="bg-gray-100 p-6 md:p-12">
+      <div class="container mx-auto max-w-6xl">
+        <h2 class="font-heading text-4xl font-bold text-blue-900 text-center">Why Choose Us?</h2>
+        <p class="text-center text-gray-600 mt-4 max-w-2xl mx-auto">
+          We provide a holistic education that combines modern teaching, digital learning, and traditional values.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <!-- Feature 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow">
+            <div class="bg-red-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1.125-3M14.25 17L15 20l1.125-3M10.125 6.75H9.75V15M14.25 6.75H14.625V15M12 4.5V6.75m0 12.75v-2.25M15.75 5.25v-1.5H8.25v1.5M12 9.75v-2.25"/></svg>
+            </div>
+            <h3 class="font-heading text-xl font-bold mt-4 text-blue-900">Qualified Staff</h3>
+            <p class="text-gray-600 text-sm mt-2">A team of dedicated and experienced educators.</p>
+          </div>
+          <!-- Feature 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow">
+            <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h3 class="font-heading text-xl font-bold mt-4 text-blue-900">Holistic Development</h3>
+            <p class="text-gray-600 text-sm mt-2">Focus on academics, sports, and arts.</p>
+          </div>
+          <!-- Feature 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow">
+            <div class="bg-yellow-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m3-4h1m-1 4h1m-1-4h1m3-4h1m-1 4h1m-1 4h1"/></svg>
+            </div>
+            <h3 class="font-heading text-xl font-bold mt-4 text-blue-900">Modern Infrastructure</h3>
+            <p class="text-gray-600 text-sm mt-2">Safe, secure, and stimulating environment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="container mx-auto max-w-6xl p-6 md:p-12">
+      <h2 class="font-heading text-4xl font-bold text-blue-900 text-center">Our Glimpses</h2>
+      <p class="text-center text-gray-600 mt-4 max-w-2xl mx-auto">
+        A look into the vibrant life at PM SHRI Chirawak.
+      </p>
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12 gallery-grid" id="galleryGrid">
+        <img src="IMG-20251109-WA0022.jpg" alt="Gallery Image 1" data-full="IMG-20251109-WA0022.jpg" class="rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity" onerror="this.onerror=null;this.src='https://placehold.co/300x180/E94A2B/FFFFFF?text=Image+1';">
+        <img src="IMG-20251109-WA0019.jpg" alt="Gallery Image 2" data-full="IMG-20251109-WA0019.jpg" class="rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity" onerror="this.onerror=null;this.src='https://placehold.co/300x180/0284C7/FFFFFF?text=Image+2';">
+        <img src="IMG-20251109-WA0008.jpg" alt="Gallery Image 3" data-full="IMG-20251109-WA0008.jpg" class="rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity" onerror="this.onerror=null;this.src='https://placehold.co/300x180/EAB308/FFFFFF?text=Image+3';">
+        <img src="IMG-20251109-WA0012.jpg" alt="Gallery Image 4" data-full="IMG-20251109-WA0012.jpg" class="rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity" onerror="this.onerror=null;this.src='https://placehold.co/300x180/16A34A/FFFFFF?text=Image+4';">
+        <img src="IMG-20251109-WA0013.jpg" alt="Gallery Image 5" data-full="IMG-20251109-WA0013.jpg" class="rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity" onerror="this.onerror=null;this.src='https://placehold.co/300x180/E94A2B/FFFFFF?text=Image+5';">
+        <img src="IMG-20251109-WA0024.jpg" alt="Gallery Image 6" data-full="IMG-20251109-WA0024.jpg" class="rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity" onerror="this.onerror=null;this.src='https://placehold.co/300x180/0284C7/FFFFFF?text=Image+6';">
+        <img src="IMG-20251109-WA0023.jpg" alt="Gallery Image 7" data-full="IMG-20251109-WA0023.jpg" class="rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity" onerror="this.onerror=null;this.src='https://placehold.co/300x180/EAB308/FFFFFF?text=Image+7';">
+        <img src="IMG-20251109-WA0018.jpg" alt="Gallery Image 8" data-full="IMG-20251109-WA0018.jpg" class="rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity" onerror="this.onerror=null;this.src='https://placehold.co/300x180/16A34A/FFFFFF?text=Image+8';">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-gray-200 mt-12">
+    <div class="container mx-auto max-w-6xl p-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Column 1: About -->
+        <div>
+          <h4 class="font-heading text-lg font-bold text-white mb-4">PM SHRI CHIRAWAK</h4>
+          <p class="text-sm leading-relaxed">
+            PM SHRI UPPER PRIMARY SCHOOL CHIRAWAK<br>
+            Aligarh, Uttar Pradesh<br>
+            Phone: +91-XXXXXXXXXX<br>
+            Email: info@pmshrichirawak.edu.in
+          </p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div>
+          <h4 class="font-heading text-lg font-bold text-white mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="about.html" class="hover:text-yellow-300">About Us</a></li>
+            <li><a href="admission.html" class="hover:text-yellow-300">Admissions</a></li>
+            <li><a href="activities.html" class="hover:text-yellow-300">Activities</a></li>
+            <li><a href="media.html" class="hover:text-yellow-300">Media Highlights</a></li>
+            <li><a href="contact.html" class="hover:text-yellow-300">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Academics -->
+        <div>
+          <h4 class="font-heading text-lg font-bold text-white mb-4">Academics</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="science-lab.html" class="hover:text-yellow-300">Science Lab</a></li>
+            <li><a href="elearning.html" class="hover:text-yellow-300">E-Learning</a></li>
+            <li><a href="meena-manch.html" class="hover:text-yellow-300">Meena Manch</a></li>
+            <li><a href="staff.html" class="hover:text-yellow-300">Our Staff</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Follow Us -->
+        <div>
+          <h4 class="font-heading text-lg font-bold text-white mb-4">Follow Us</h4>
+          <div class="flex gap-4">
+            <a href="#" class="w-8 h-8 bg-blue-700 rounded-full flex items-center justify-center hover:bg-red-500" aria-label="Facebook">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+            </a>
+            <a href="#" class="w-8 h-8 bg-blue-700 rounded-full flex items-center justify-center hover:bg-red-500" aria-label="YouTube">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.417.232-4.101 1.016-4.101 5.5.011 4.927.688 5.769 4.1 6.002 3.599.246 11.626.245 15.23 0 3.417-.232 4.101-1.016 4.101-5.5-.011-4.927-.688-5.769-4.1-6.002zM9.996 15.006V7.001l6.001 4.003-6.001 4.002z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-blue-950 text-gray-400 text-center text-sm p-4">
+      © 2025 PM SHRI UPPER PRIMARY SCHOOL CHIRAWAK. All Rights Reserved. Developed by Shashi Teotia, Asst. Teacher.
     </div>
   </footer>
 
-  <!-- Back to top -->
-  <a class="backtop" href="#hero-heading" aria-label="Back to top">Back to top ↑</a>
-
-  <!-- Lightbox modal for gallery -->
-  <div id="lightbox" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.85);z-index:9999">
-    <button id="lbClose" style="position:absolute;top:18px;right:18px;background:transparent;color:#fff;border:0;font-size:28px;cursor:pointer">✕</button>
-    <img id="lbImage" src="" alt="expanded" style="max-width:95%;max-height:90%;border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,.6)">
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="close" id="lbClose" aria-label="Close">✕</button>
+    <img id="lbImage" src="" alt="Expanded image">
   </div>
 
   <script>
-    // gallery lightbox
-    document.getElementById('galleryGrid')?.addEventListener('click', function(e){
-      const img = e.target.closest('img'); if(!img) return;
-      const src = img.dataset.full || img.src;
-      const lb = document.getElementById('lightbox'); document.getElementById('lbImage').src = src; lb.style.display='flex';
-      document.body.style.overflow='hidden';
+    // --- Mobile Menu Toggle ---
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
     });
-    document.getElementById('lbClose')?.addEventListener('click',function(){ document.getElementById('lightbox').style.display='none'; document.body.style.overflow='';});
-    document.getElementById('lightbox')?.addEventListener('click', function(e){ if(e.target===this) { this.style.display='none'; document.body.style.overflow=''; }});
-    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ document.getElementById('lightbox').style.display='none'; document.body.style.overflow=''; }});
 
-    // smooth back-to-top
-    document.querySelector('.backtop')?.addEventListener('click',function(e){ e.preventDefault(); document.querySelector('#hero-heading')?.scrollIntoView({behavior:'smooth'});});
+    // --- Hero Slider (Swiper.js) ---
+    var swiper = new Swiper('.hero-swiper', {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+    // --- Lightbox for gallery images ---
+    const gallery = document.getElementById('galleryGrid');
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImage');
+    const lbClose = document.getElementById('lbClose');
+
+    if (gallery) {
+      gallery.addEventListener('click', (e) => {
+        const img = e.target.closest('img');
+        if (!img) return;
+        const src = img.dataset.full || img.src;
+        lbImg.src = src;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+    function closeLB() {
+      lightbox.classList.remove('open');
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    }
+    lbClose.addEventListener('click', closeLB);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLB();
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLB(); });
   </script>
+
 </body>
 </html>
